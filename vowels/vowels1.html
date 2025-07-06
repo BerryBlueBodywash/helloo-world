@@ -1,0 +1,246 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vowels 1 - Lesson I</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      overflow: auto;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .home-button {
+      width: 28px;
+      height: 28px;
+      margin-right: 0.75rem;
+      background-image: url('https://img.icons8.com/ios-filled/50/00695c/home.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    .progress-container {
+      flex: 1;
+      height: 10px;
+      background-color: #eee;
+      border-radius: 5px;
+      margin-right: 0.75rem;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 50%; /* 2 pages total */
+      background-color: #ffcc00;
+    }
+
+    .lesson-title {
+      font-weight: bold;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      height: auto;
+    }
+
+    .slide {
+      flex: 0 0 100vw;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      align-items: flex-start;
+      overflow-y: auto;
+      padding: 2rem 1rem;
+    }
+
+    .text-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      max-width: 100%;
+      width: 360px;
+    }
+
+    .text-card p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight-red {
+      color: #e53935;
+    }
+
+    .highlight-bold {
+      font-weight: bold;
+    }
+
+    .bangla-image {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem auto 0.5rem;
+    }
+
+    .bangla-pronounce {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .bangla-row {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .nav-indicator {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="index.html" class="home-button" aria-label="Go Home"></a>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+    <div class="lesson-title">Vowels - Lesson I</div>
+  </div>
+
+  <div class="slider" id="slider">
+    <!-- Page 1 -->
+    <section class="slide">
+      <div class="text-card">
+        <p>Independent <span class="highlight-red">vowels</span> can exist by themselves.</p>
+        <p>They are typically used at the <span class="highlight-bold">start of a syllable</span>.</p>
+        <img class="bangla-image" src="images/amar-diagram.png" alt="Bangla word amar" />
+        <p>Dependent vowels have to be attached to a consonant.</p>
+        <p>They can come before, after, above, or below their attached consonant.</p>
+        <img class="bangla-image" src="images/bangla-vowels.png" alt="Bangla vowels" />
+        <div class="nav-indicator">← 1 →</div>
+      </div>
+    </section>
+
+    <!-- Page Type 2 - Letter Introduction Card -->
+    <section class="slide">
+      <div class="text-card">
+
+        <!-- Letter boxes -->
+        <div style="display: flex; justify-content: space-around; margin: 1rem 0;">
+          <div style="background-color: #ffcc00; padding: 1rem 1.5rem; border-radius: 20px; font-size: 2.5rem;">আ</div>
+          <div style="background-color: #ffcc00; padding: 1rem 1.5rem; border-radius: 20px; font-size: 2.5rem;">◌া</div>
+        </div>
+
+        <!-- Letter name + sound + audio -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="margin: 0; font-weight: bold;">SHORIA</p>
+            <p style="margin: 0;">a (ah)</p>
+          </div>
+          <button onclick="document.getElementById('letter-audio').play()" style="background: #4285f4; border: none; border-radius: 50%; padding: 0.5rem;">
+            🔊
+          </button>
+          <audio id="letter-audio" src="audio/shoria.mp3"></audio>
+        </div>
+
+        <!-- Words with আ -->
+        <p style="font-weight: bold; margin-top: 1.5rem;">Words With আ</p>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;">
+          <!-- Word 1 -->
+          <div style="width: 45%; text-align: center;">
+            <img src="images/mango.png" alt="Mango" style="width: 100%; max-height: 100px;" />
+            <p style="color: red; font-size: 1.2rem; margin: 0;">আম</p>
+          </div>
+
+          <!-- Word 2 -->
+          <div style="width: 45%; text-align: center;">
+            <img src="images/playing.png" alt="Playing" style="width: 100%; max-height: 100px;" />
+            <p style="color: red; font-size: 1.2rem; margin: 0;">খেলা</p>
+          </div>
+
+          <!-- Word 3 -->
+          <div style="width: 45%; text-align: center;">
+            <img src="images/flour.png" alt="Flour" style="width: 100%; max-height: 100px;" />
+            <p style="color: red; font-size: 1.2rem; margin: 0;">আটা</p>
+          </div>
+
+          <!-- Word 4 -->
+          <div style="width: 45%; text-align: center;">
+            <img src="images/prayer.png" alt="Prayer" style="width: 100%; max-height: 100px;" />
+            <p style="color: red; font-size: 1.2rem; margin: 0;">নামাজ</p>
+          </div>
+        </div>
+
+        <div class="nav-indicator">← 2 →</div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const slider = document.getElementById('slider');
+    const progressBar = document.querySelector('.progress-bar');
+    const totalSlides = slider.children.length;
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+      currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
+      slider.scrollTo({
+        left: currentSlide * window.innerWidth,
+        behavior: 'smooth'
+      });
+      updateProgressBar();
+    }
+
+    function updateProgressBar() {
+      const percent = ((currentSlide + 1) / totalSlides) * 100;
+      progressBar.style.width = percent + '%';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        goToSlide(currentSlide + 1);
+      } else if (e.key === 'ArrowLeft') {
+        goToSlide(currentSlide - 1);
+      }
+    });
+
+    slider.addEventListener('scroll', () => {
+      const index = Math.round(slider.scrollLeft / window.innerWidth);
+      if (index !== currentSlide) {
+        currentSlide = index;
+        updateProgressBar();
+      }
+    });
+
+    updateProgressBar(); // initialize on load
+  </script>
+</body>
+</html>
